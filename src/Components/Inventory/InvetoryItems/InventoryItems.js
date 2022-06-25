@@ -1,6 +1,8 @@
-import { Card, Col } from "react-bootstrap";
-
+import { Button, Card, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 const InventoryItems = ({ car }) => {
+  const navigate = useNavigate();
+
   return (
     <Col>
       <Card className="h-100">
@@ -12,7 +14,13 @@ const InventoryItems = ({ car }) => {
             <Card.Text>Qty: {car.quantity}</Card.Text>
           </div>
           <Card.Text>{car.description}</Card.Text>
-          <Card.Text>{car.supllierName}</Card.Text>
+          <Card.Text>Supplier: {car.supllierName}</Card.Text>
+          <Button
+            className="w-100"
+            onClick={() => navigate(`/inventory/${car._id}`)}
+          >
+            Stock Update
+          </Button>
         </Card.Body>
       </Card>
     </Col>

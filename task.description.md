@@ -19,7 +19,7 @@ We have a sample task for you.
 
 2. Add two extra sections on the home page and the four sections mentioned above. Tips: This is the place to shine. Add something different and unique to make your website looks different than others. And Make them relevant to your website. ⭕one home section baki⭕
 
-3. You will have six items in the inventory items section. You can put one or more items in a row based on your design. Each article should have a relevant name👍, image👍, short description, price👍, quantity, supplier name, and an update button (button could say: update or manage or stock update, etc.).
+3. You will have six items in the inventory items section. You can put one or more items in a row based on your design. Each article should have a relevant name👍, image👍, short description, price👍, quantity👍, supplier name👍, and an update button👍 (button could say: update or manage or stock update, etc.).
 
 4. Clicking on the button will take the user to the `inventory/:id` route. This route will be a private/protected route. Please make sure that the private route redirects to the login page if the user is not logged in. After login, the user will be redirected to the page he/she wanted to go to. Also, after reloading the page of a private route, the user is not redirected to the login page.
 
