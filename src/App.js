@@ -8,6 +8,7 @@ import Home from "./Components/Home/Home";
 import OurServices from "./Components/Home/Our Services/OurServices";
 import AddInventoryItem from "./Components/Inventory/AddInventoryItem/AddInventoryItem";
 import ManageInventory from "./Components/Inventory/ManageInventory/ManageInventory";
+import MyItem from "./Components/Inventory/MyItem/MyItem";
 import SingleInventory from "./Components/Inventory/SingleInventory/SingleInventory";
 import NotFound from "./Components/NotFound/NotFound";
 import Footer from "./Components/Shared/Footer/Footer";
@@ -31,6 +32,14 @@ function App() {
             element={
               <RequireAuth>
                 <SingleInventory />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/myitem"
+            element={
+              <RequireAuth>
+                <MyItem />
               </RequireAuth>
             }
           />
