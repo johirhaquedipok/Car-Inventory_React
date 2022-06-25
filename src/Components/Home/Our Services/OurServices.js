@@ -1,11 +1,21 @@
 import { Card, Col, Row } from "react-bootstrap";
-import { GiCarKey } from "react-icons/gi";
+import { GiCarKey, GiCartwheel, GiTechnoHeart } from "react-icons/gi";
 const OurServices = () => {
   return (
     <Row xs={1} md={3} className="g-4">
       <Col>
-        <Card>
-          <GiCarKey />
+        <Card className="text-center">
+          <div
+            className="text-center d-flex align-items-center justify-content-center align-self-center mt-3"
+            style={{
+              height: "70px",
+              width: "70px",
+              backgroundColor: "aliceblue",
+              borderRadius: " 50%",
+            }}
+          >
+            <GiTechnoHeart />
+          </div>
           <Card.Body>
             <Card.Title>ALL BRANDS</Card.Title>
             <Card.Text>
@@ -16,8 +26,18 @@ const OurServices = () => {
         </Card>
       </Col>
       <Col>
-        <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
+        <Card className="text-center">
+          <div
+            className="text-center d-flex align-items-center justify-content-center align-self-center mt-3"
+            style={{
+              height: "70px",
+              width: "70px",
+              backgroundColor: "aliceblue",
+              borderRadius: " 50%",
+            }}
+          >
+            <GiCarKey />
+          </div>
           <Card.Body>
             <Card.Title>FREE SUPPORT</Card.Title>
             <Card.Text>
@@ -29,8 +49,18 @@ const OurServices = () => {
         </Card>
       </Col>
       <Col>
-        <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
+        <Card className="text-center">
+          <div
+            className="text-center d-flex align-items-center justify-content-center align-self-center mt-3"
+            style={{
+              height: "70px",
+              width: "70px",
+              backgroundColor: "aliceblue",
+              borderRadius: " 50%",
+            }}
+          >
+            <GiCartwheel />
+          </div>
           <Card.Body>
             <Card.Title>DEALERSHIP</Card.Title>
             <Card.Text>
