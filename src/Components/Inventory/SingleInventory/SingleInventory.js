@@ -13,11 +13,17 @@ const SingleInventory = () => {
 
   const handleDeleteQty = (e) => {
     e.preventDefault();
-    console.log(e);
+    setCar((precar) => ({
+      ...precar.car,
+      quantity: precar.quantity - 1,
+    }));
   };
   const handleAddQty = (e) => {
     e.preventDefault();
-    console.log("add");
+    setCar((precar) => ({
+      ...precar.car,
+      quantity: precar.quantity + 1,
+    }));
   };
   return (
     <Row>
@@ -37,6 +43,7 @@ const SingleInventory = () => {
                   variant="danger"
                   className="mb-3 mt-sm-3"
                   onClick={handleDeleteQty}
+                  disabled={car.quantity > 0 ? false : true}
                 >
                   Delivered
                 </Button>

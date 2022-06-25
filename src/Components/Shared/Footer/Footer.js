@@ -6,11 +6,8 @@ const Footer = () => {
     <Row className=" my-2">
       <Col md={4}>
         <div className=" mb-4">
-          <h2>Dente</h2>
-          <p>
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the blind texts.
-          </p>
+          <h2>Car Invento</h2>
+          <p>Get extra speed with our super charged cars.</p>
         </div>
       </Col>
       <Col md={4}>
@@ -65,13 +62,13 @@ const Footer = () => {
                 <span className="me-1 ">
                   <BsHouse />
                 </span>
-                <span>203 Fake St. Mountain View, Dhaka, Bangladesh</span>
+                <span>Narayanganj, Dhaka, Bangladesh</span>
               </li>
               <li className="d-flex align-items-center ">
                 <span className="me-1 ">
                   <BsPhone />
                 </span>
-                <span>+2 392 3929 210</span>
+                <span>+088</span>
               </li>
               <li className="d-flex align-items-center ">
                 <span className="me-1 ">
