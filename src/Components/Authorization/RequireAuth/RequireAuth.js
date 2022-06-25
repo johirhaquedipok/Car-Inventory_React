@@ -1,4 +1,4 @@
-import { ToastContainer } from "react-bootstrap";
+import { Button, ToastContainer } from "react-bootstrap";
 import {
   useAuthState,
   useSendEmailVerification,
@@ -35,7 +35,7 @@ const RequireAuth = ({ children }) => {
         {err}
         <h3 className="text-danger">Your Email is not verified!!</h3>
         <h5 className="text-success"> Please Verify your email address</h5>
-        <button
+        <Button
           className="btn btn-primary"
           onClick={async () => {
             await sendEmailVerification();
@@ -43,7 +43,7 @@ const RequireAuth = ({ children }) => {
           }}
         >
           Send Verification Email Again
-        </button>
+        </Button>
         <ToastContainer></ToastContainer>
       </div>
     );
