@@ -44,7 +44,7 @@ const Signup = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    errorElement = setValidated(true);
+    setValidated(true);
 
     await createUserWithEmailAndPassword(email, password);
 

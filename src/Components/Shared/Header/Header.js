@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import CustomLink from "./CustomLink";
 const Header = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   return (
     <Navbar bg="light" expand="lg">
@@ -19,7 +19,6 @@ const Header = () => {
             <CustomLink to="/home">Home</CustomLink>
             <CustomLink to="/blog">Blog</CustomLink>
 
-            <CustomLink to="/blog">Blog</CustomLink>
             {user ? (
               <Button onClick={() => signOut(auth)}>Sign Out</Button>
             ) : (
