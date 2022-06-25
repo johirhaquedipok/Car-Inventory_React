@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Error from "../../Utilities/Error/Error";
 import Loading from "../../Utilities/Loading/Loading";
@@ -11,7 +11,8 @@ const LogIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleSignIn = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -28,9 +29,9 @@ const LogIn = () => {
   }
   useEffect(() => {
     if (user) {
-      navigate("/home");
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, navigate, from]);
 
   return (
     <Row className="align-items center justify-content-center mt-5">

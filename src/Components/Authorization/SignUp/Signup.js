@@ -4,7 +4,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Utilities/Loading/Loading";
 import SocialSignIn from "../SocialSignIn/SocialSignIn";
@@ -14,7 +14,8 @@ const Signup = () => {
 
   // react router dom hook
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   // checkbox state for sign up button enable disable
   const [check, setCheck] = useState(false);
 
@@ -52,9 +53,9 @@ const Signup = () => {
   };
   useEffect(() => {
     if (user) {
-      navigate("/home");
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, navigate, from]);
 
   if (error || updateError) {
     errorElement = (

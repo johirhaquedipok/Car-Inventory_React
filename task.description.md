@@ -21,7 +21,7 @@ We have a sample task for you.
 
 3. You will have six items in the inventory items section. You can put one or more items in a row based on your design. Each article should have a relevant name👍, image👍, short description, price👍, quantity👍, supplier name👍, and an update button👍 (button could say: update or manage or stock update, etc.).
 
-4. Clicking on the button will take the user to the `inventory/:id` route. This route will be a private/protected route. Please make sure that the private route redirects to the login page if the user is not logged in. After login, the user will be redirected to the page he/she wanted to go to. Also, after reloading the page of a private route, the user is not redirected to the login page.
+4. Clicking on the button will take the user to the `inventory/:id` route. This route will be a private/protected route. Please make sure that the private route redirects to the login page if the user is not logged in. After login, the user will be redirected to the page he/she wanted to go to. Also, after reloading the page of a private route, the user is not redirected to the login page. 👍
 
 5. The `inventory/:id` page should display detailed item information like id, name, image, description, price, quantity, supplier name, sold, etc. This page will have a Button named `delivered`. Once this button is clicked, it will reduce the quantity of the item by one. Make sure this data is saved on the database, and the change in quantity is displayed on the website.
 
