@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Row } from "react-bootstrap";
-import InventoryItems from "../InvetoryItems/InventoryItems";
+import { Button, Row, Table } from "react-bootstrap";
+import { BsFillXCircleFill } from "react-icons/bs";
 const ManageInventory = () => {
   const [cars, setCars] = useState([]);
   useEffect(() => {
@@ -10,9 +10,34 @@ const ManageInventory = () => {
   }, []);
   return (
     <Row xs={1} md={3} lg={3} className="g-4">
-      {cars.map((car) => (
-        <InventoryItems key={car._id} car={car} />
-      ))}
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Car Name</th>
+            <th>Car Price</th>
+            <th>Car Quantity</th>
+            <th>Car Supplier</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        {cars.map((car, idx) => (
+          <tbody key={car._id}>
+            <tr>
+              <td>{idx + 1}</td>
+              <td>{car.name}</td>
+              <td>{car.price}</td>
+              <td>{car.quantity}</td>
+              <td>{car.supllierName}</td>
+              <td>
+                <Button>
+                  <BsFillXCircleFill />
+                </Button>
+              </td>
+            </tr>
+          </tbody>
+        ))}
+      </Table>
     </Row>
   );
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const SingleInventory = () => {
   const { id } = useParams();
 
@@ -57,6 +57,9 @@ const SingleInventory = () => {
           </Card.Body>
         </Card>
       </Col>
+      <Button as={Link} to="/managein">
+        Manage Inventory
+      </Button>
     </Row>
   );
 };
