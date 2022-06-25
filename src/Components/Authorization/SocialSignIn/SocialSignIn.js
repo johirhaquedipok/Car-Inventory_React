@@ -2,21 +2,23 @@ import { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { BsGoogle } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Error from "../../Utilities/Error/Error";
 import Loading from "../../Utilities/Loading/Loading";
 const SocialSignIn = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   if (loading) {
     <Loading />;
   }
   useEffect(() => {
     if (user) {
-      navigate("/home");
+      navigate(from, { replace: true });
     }
-  }, [user, navigate]);
+  }, [user, navigate, from]);
   let err;
   if (error) {
     err = <Error error={error} />;
