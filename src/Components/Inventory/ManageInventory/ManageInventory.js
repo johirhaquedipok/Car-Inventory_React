@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Row, Table } from "react-bootstrap";
 import { BsFillXCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const ManageInventory = () => {
   const [cars, setCars] = useState([]);
   useEffect(() => {
@@ -10,6 +11,10 @@ const ManageInventory = () => {
   }, []);
   return (
     <Row xs={1} md={3} lg={3} className="g-4">
+      <Button as={Link} to="/addin">
+        Add New Item
+      </Button>
+
       <Table striped bordered hover>
         <thead>
           <tr>
