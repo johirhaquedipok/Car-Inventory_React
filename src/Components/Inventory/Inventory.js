@@ -5,7 +5,7 @@ import InventoryItems from "./InvetoryItems/InventoryItems";
 const Inventory = () => {
   const [cars, setCars] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch(`http://localhost:5000/inventory?size=${6}`)
       .then((res) => res.json())
       .then((data) => setCars(data));
   }, []);
