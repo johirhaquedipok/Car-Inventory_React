@@ -25,7 +25,7 @@ We have a sample task for you.
 
 5. The `inventory/:id` page should display detailed item information like id, name, image, description, price, quantity, supplier name, sold, etc. This page will have a Button named `delivered`. Once this button is clicked, it will reduce the quantity of the item by one. Make sure this data is saved on the database, and the change in quantity is displayed on the website.⭕btn er kaj baki ache⭕
 
-6. There will be a small form on the `inventory/:id` page. The from will say, restock the items. You will have an input field where you can put some numbers. And hitting the button will increase the quantity of the item.⭕btn er kaj baki ache⭕
+6. There will be a small form on the `inventory/:id` page. The form will say, restock the items. You will have an input field where you can put some numbers. And hitting the button will increase the quantity of the item.⭕btn er kaj baki ache⭕
 
 7. There will be a link (link button) at the bottom of the inventory section of the home page. It will say `Manage Inventories`. You will have the same link on the `inventory:/id` page. The link will say, `Manage Inventories`. This link button will take you to the `manage inventory` page. This page will show all the inventory items. Will be more than 6 items. You will have more than six inventory items. On the home page, you will show 6. However, on the manage inventory page, you will show every item. Every item will show at least name and other information. And every item will have a delete button. This will delete the item⭕btn er kaj baki ache⭕. On the manage inventory page, you can show the inventory items the way you want. (however, you may consider showing the items in a tabular form)👍
 

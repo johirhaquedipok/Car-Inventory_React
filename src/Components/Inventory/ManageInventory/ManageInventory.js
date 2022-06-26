@@ -9,6 +9,12 @@ const ManageInventory = () => {
       .then((res) => res.json())
       .then((data) => setCars(data));
   }, []);
+  const handleRemove = (id) => {
+    const oldCar = [...cars];
+    const newCar = oldCar.filter((item) => item._id !== id);
+    console.log(newCar);
+    setCars(newCar);
+  };
   return (
     <Row xs={1} md={3} lg={3} className="g-4">
       <Button as={Link} to="/addin">
@@ -35,7 +41,11 @@ const ManageInventory = () => {
               <td>{car.quantity}</td>
               <td>{car.supllierName}</td>
               <td>
-                <Button>
+                <Button
+                  variant="danger"
+                  className="d-flex align-items-center justif-content-center"
+                  onClick={() => handleRemove(car._id)}
+                >
                   <BsFillXCircleFill />
                 </Button>
               </td>
