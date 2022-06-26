@@ -10,10 +10,13 @@ const ManageInventory = () => {
       .then((data) => setCars(data));
   }, []);
   const handleRemove = (id) => {
-    const oldCar = [...cars];
-    const newCar = oldCar.filter((item) => item._id !== id);
+    const sure = window.confirm("Are you sure!");
+    if (sure) {
+      const oldCar = [...cars];
+      const newCar = oldCar.filter((item) => item._id !== id);
 
-    setCars(newCar);
+      setCars(newCar);
+    }
   };
   return (
     <Row xs={1} md={3} lg={3} className="g-4">

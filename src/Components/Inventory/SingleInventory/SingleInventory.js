@@ -21,12 +21,11 @@ const SingleInventory = () => {
   };
   const handleAddQty = (e) => {
     e.preventDefault();
-    const number = e.target.value;
-    console.log(e.target.value);
-    if (number > 0) {
+    let number = e.target.inputNumber;
+    if (number.value > 0) {
       setCar((precar) => ({
         ...precar,
-        quantity: precar.quantity + parseInt(number),
+        quantity: precar.quantity + parseInt(number.value),
       }));
     }
   };
@@ -55,14 +54,16 @@ const SingleInventory = () => {
                 <Card.Text>Qty: {car.quantity}</Card.Text>
                 <div>
                   <Card.Text>Input Some quantity</Card.Text>
-                  <Form onClick={handleAddQty}>
+                  <Form onSubmit={handleAddQty}>
                     <Form.Control
                       className="w-md-50 mb-2"
                       size="sm"
                       type="number"
+                      min="0"
+                      name="inputNumber"
                       placeholder="type qty"
                     />
-                    <Button>Add Qty</Button>
+                    <Button type="submit">Add Qty</Button>
                   </Form>
                 </div>
               </div>

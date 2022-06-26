@@ -23,7 +23,7 @@ We have a sample task for you.
 
 4. Clicking on the button will take the user to the `inventory/:id` route. This route will be a private/protected route. Please make sure that the private route redirects to the login page if the user is not logged in. After login, the user will be redirected to the page he/she wanted to go to. Also, after reloading the page of a private route, the user is not redirected to the login page. 👍
 
-5. The `inventory/:id` page should display detailed item information like id, name, image, description, price, quantity, supplier name, sold, etc. This page will have a Button named `delivered`. Once this button is clicked, it will reduce the quantity of the item by one. Make sure this data is saved on the database, and the change in quantity is displayed on the website.⭕btn er kaj baki ache⭕
+5. The `inventory/:id` page should display detailed item information like id, name, image, description, price, quantity, supplier name, sold, etc. This page will have a Button named `delivered`. Once this button is clicked, it will reduce the quantity of the item by one. ⭕Make sure this data is saved on the database⭕, and the change in quantity is displayed on the website.⭕btn er kaj baki ache⭕
 
 6. There will be a small form on the `inventory/:id` page. The form will say, restock the items. You will have an input field where you can put some numbers. And hitting the button will increase the quantity of the item.⭕btn er kaj baki ache⭕
 
@@ -35,7 +35,7 @@ We have a sample task for you.
 
 10. If a user is logged in, he/she will see more options like `Manage Items`, `Add Item`, `My items`, `Logout`. Based on your website idea, you can change the name of these menu items.👍
 
-11. On the My Items page, the logged-in user will see only his/her Items. If the user wants, he/she should be able to cancel/delete any item. Ask for a confirmation message before deleting or canceling an item. Using browser confirmation dialog is ok. So, you will be able to delete an item either from the `Manage Inventories` page also, from the `My Items` page.
+11. On the My Items page, the logged-in user will see only his/her Items. If the user wants, he/she should be able to cancel/delete any item. Ask for a confirmation message before deleting or canceling an item. Using browser confirmation dialog is ok. So, you will be able to delete an item either from the `Manage Inventories` page also, from the `My Items` page.⭕database add baki ache⭕
 
 12. No Fake data (data must be hosted on the database). Database could be mongodb atlas or any other noSQL database.👍
 13. Add two more routes. one route will be `blogs`. You will need to answer at least three questions on the blog page. This won't be a protected route. We recommend answering all four questions.

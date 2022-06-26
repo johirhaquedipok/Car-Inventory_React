@@ -22,6 +22,7 @@ const Header = () => {
             {user ? (
               <>
                 <CustomLink to="/myitem">My Item</CustomLink>
+                <CustomLink to="/addin">Add Item</CustomLink>
                 <Button onClick={() => signOut(auth)}>Sign Out</Button>
               </>
             ) : (

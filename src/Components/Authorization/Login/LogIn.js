@@ -61,14 +61,14 @@ const LogIn = () => {
           <Button variant="primary" type="submit">
             Submit
           </Button>
-          <div className="row mb-4">
-            <Col className="col">
-              <Button variant="link" type="submit" as={Link} to="/reset">
-                Forgot Your Password
-              </Button>
-            </Col>
-          </div>
         </Form>
+        <div className="row mb-4">
+          <Col className="col">
+            <Button variant="link" type="submit" as={Link} to="/reset">
+              Forgot Your Password
+            </Button>
+          </Col>
+        </div>
         <SocialSignIn />
         <div className=" d-flex align-items-center justify-content-center">
           No account?
