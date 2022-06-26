@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button, Card, Col, Form, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 const SingleInventory = () => {
   const { id } = useParams();
-
+  const increaseValue = useRef(0);
   const [car, setCar] = useState({});
+
   useEffect(() => {
     fetch(`http://localhost:5000/inventories/${id}`)
       .then((res) => res.json())
@@ -14,16 +15,19 @@ const SingleInventory = () => {
   const handleDeleteQty = (e) => {
     e.preventDefault();
     setCar((precar) => ({
-      ...precar.car,
+      ...precar,
       quantity: precar.quantity - 1,
     }));
   };
   const handleAddQty = (e) => {
     e.preventDefault();
-    setCar((precar) => ({
-      ...precar.car,
-      quantity: precar.quantity + 1,
-    }));
+    const qtyValue = increaseValue.current.value;
+    if (qtyValue > 0) {
+      setCar((precar) => ({
+        ...precar,
+        quantity: precar.quantity + parseInt(qtyValue),
+      }));
+    }
   };
   return (
     <Row>
@@ -50,14 +54,17 @@ const SingleInventory = () => {
                 <Card.Text>Qty: {car.quantity}</Card.Text>
                 <div>
                   <Card.Text>Input Some quantity</Card.Text>
-                  <Form.Control
-                    className="w-md-50 mb-2"
-                    size="sm"
-                    type="number"
-                    min="0"
-                    placeholder="type qty"
-                  />
-                  <Button onClick={handleAddQty}>Add Qty</Button>
+                  <Form onClick={handleAddQty}>
+                    <Form.Control
+                      className="w-md-50 mb-2"
+                      size="sm"
+                      type="number"
+                      min="0"
+                      ref={increaseValue}
+                      placeholder="type qty"
+                    />
+                    <Button>Add Qty</Button>
+                  </Form>
                 </div>
               </div>
             </div>
