@@ -12,7 +12,7 @@ const ManageInventory = () => {
   const handleRemove = (id) => {
     const oldCar = [...cars];
     const newCar = oldCar.filter((item) => item._id !== id);
-    console.log(newCar);
+
     setCars(newCar);
   };
   return (

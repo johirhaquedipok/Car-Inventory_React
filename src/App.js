@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import LogIn from "./Components/Authorization/Login/LogIn";
 import RequireAuth from "./Components/Authorization/RequireAuth/RequireAuth";
+import ResetPassword from "./Components/Authorization/ResetPassword/ResetPassword";
 import Signup from "./Components/Authorization/SignUp/Signup";
 import Blog from "./Components/Blog/Blog";
 import Home from "./Components/Home/Home";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/services" element={<OurServices />} />
 
           <Route path="/blog" element={<Blog />} />
+          <Route path="/reset" element={<ResetPassword />} />
           <Route path="/managein" element={<ManageInventory />} />
           <Route path="/addin" element={<AddInventoryItem />} />
           <Route

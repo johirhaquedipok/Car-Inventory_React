@@ -27,13 +27,13 @@ We have a sample task for you.
 
 6. There will be a small form on the `inventory/:id` page. The form will say, restock the items. You will have an input field where you can put some numbers. And hitting the button will increase the quantity of the item.⭕btn er kaj baki ache⭕
 
-7. There will be a link (link button) at the bottom of the inventory section of the home page. It will say `Manage Inventories`. You will have the same link on the `inventory:/id` page. The link will say, `Manage Inventories`. This link button will take you to the `manage inventory` page. This page will show all the inventory items. Will be more than 6 items. You will have more than six inventory items. On the home page, you will show 6. However, on the manage inventory page, you will show every item. Every item will show at least name and other information. And every item will have a delete button. This will delete the item⭕btn er kaj baki ache⭕. On the manage inventory page, you can show the inventory items the way you want. (however, you may consider showing the items in a tabular form)👍
+7. There will be a link (link button) at the bottom of the inventory section of the home page. It will say `Manage Inventories`. You will have the same link on the `inventory:/id` page. The link will say, `Manage Inventories`. This link button will take you to the `manage inventory` page. This page will show all the inventory items. Will be more than 6 items. You will have more than six inventory items. On the home page, you will show 6. However, on the manage inventory page, you will show every item. Every item will show at least name and other information. And every item will have a delete button. This will delete the item. On the manage inventory page, you can show the inventory items the way you want. (however, you may consider showing the items in a tabular form)👍
 
-8. ON the Manage Inventories page, there will be a button named `add new item`. You can change the name of the button if you want. You will be taken to the add inventory item page by clicking on this button. There will be able to add a new inventory item. Feel free to use, react hook form or html5 form. On this page, you can put an input field to put an image url. (For simplicity, you can upload the image to imgbb or other images hosting website and then put the url on the input field)👍
+8. ON the Manage Inventories page, there will be a button named `add new item`. You can change the name of the button if you want. You will be taken to the add inventory item page by clicking on this button. There will be able to add a new inventory item. Feel free to use, react hook form or html5 form. On this page, you can put an input field to put an image url. (For simplicity, you can upload the image to imgbb or other images hosting website and then put the url on the input field)👍 ⭕database add baki ache⭕
 
 9. Implement email/password-based authentication and at least one social login(google, facebook, github, etc.) authentication. Once a user is logged in, the logout/sign-out button should appear on the header, signing out the user once clicked.👍
 
-10. If a user is logged in, he/she will see more options like `Manage Items`, `Add Item`, `My items`, `Logout`. Based on your website idea, you can change the name of these menu items.
+10. If a user is logged in, he/she will see more options like `Manage Items`, `Add Item`, `My items`, `Logout`. Based on your website idea, you can change the name of these menu items.👍
 
 11. On the My Items page, the logged-in user will see only his/her Items. If the user wants, he/she should be able to cancel/delete any item. Ask for a confirmation message before deleting or canceling an item. Using browser confirmation dialog is ok. So, you will be able to delete an item either from the `Manage Inventories` page also, from the `My Items` page.
 
@@ -53,9 +53,9 @@ We have a sample task for you.
 ### Bonus:
 
 1. Display error when user email address or password don't match.👍
-2. Send Email Verification. Don't worry if the email goes to the spam folder or it doesn't go at all. As long as your code is there, you will be fine. Add a link for Password reset (use toast)
+2. Send Email Verification. Don't worry if the email goes to the spam folder or it doesn't go at all. As long as your code is there, you will be fine. Add a link for Password reset (use toast)👍
 3. At least 12 meaningful GitHub commits for the client-side and at least 6 meaningful commits for the server-side repository.👍
-4. Meaningful `readme.md` file containing your website name, a short description, link to your live site. And at least five bullet points mention your website's different features and functionality.
+4. Meaningful `readme.md` file containing your website name, a short description, link to your live site. And at least five bullet points mention your website's different features and functionality.👍
 5. Make the website responsive. Make sure the site looks different on desktop and mobile responsive. Tablet responsive is optional👍
 6. Make the website meaningful and consistent in look and feel. Give your website a relevant name. Images and all the content of the website have to be relevant. No `lorem ipsum` please.👍
 7. Clean and organized Code. Organize components and add comments when needed👍
