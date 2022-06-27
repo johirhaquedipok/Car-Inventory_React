@@ -5,7 +5,7 @@ const SingleInventory = () => {
   const { id } = useParams();
 
   const [quantity, setQuantity] = useState(0);
-  const [suplier, setSupplier] = useState("");
+  const [supllierName, setSupllierName] = useState("");
   const [img, setImg] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -20,7 +20,7 @@ const SingleInventory = () => {
       .then((res) => res.json())
       .then((data) => {
         setQuantity(data?.quantity);
-        setSupplier(data?.supllierName);
+        setSupllierName(data?.supllierName);
         setImg(data?.img);
         setName(data?.name);
         setPrice(data?.price);
@@ -31,7 +31,7 @@ const SingleInventory = () => {
   const updateNewCar = (newQty) => {
     let newData = {
       quantity: newQty,
-      suplier,
+      supllierName,
       img,
       name,
       price,
@@ -76,7 +76,7 @@ const SingleInventory = () => {
               <div>
                 <Card.Text>${price}</Card.Text>
                 <Card.Text>{description}</Card.Text>
-                <Card.Text>Supplier: {suplier}</Card.Text>
+                <Card.Text>Supplier: {supllierName}</Card.Text>
               </div>
               <div>
                 <Button
