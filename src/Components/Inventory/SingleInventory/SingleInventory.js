@@ -28,9 +28,7 @@ const SingleInventory = () => {
       });
   };
 
-  const handleDeleteQty = () => {
-    const newQty = quantity - 1;
-
+  const updateNewCar = (newQty) => {
     let newData = {
       quantity: newQty,
       suplier,
@@ -53,11 +51,18 @@ const SingleInventory = () => {
       });
   };
 
+  const handleDeleteQty = () => {
+    const newQty = quantity - 1;
+    updateNewCar(newQty);
+  };
+
   const handleAddQty = (e) => {
     e.preventDefault();
-    let number = e.target.inputNumber;
-    if (number.value > 0) {
-      setQuantity((pre) => pre + parseInt(number.value));
+    let number = parseInt(e.target.inputNumber.value);
+
+    if (number > 0) {
+      const newQty = parseInt(quantity) + number;
+      updateNewCar(newQty);
     }
   };
   return (
