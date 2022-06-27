@@ -64,6 +64,7 @@ const SingleInventory = () => {
       const newQty = parseInt(quantity) + number;
       updateNewCar(newQty);
     }
+    e.target.reset();
   };
   return (
     <Row>

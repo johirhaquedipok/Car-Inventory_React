@@ -6,6 +6,7 @@ const AddInventoryItem = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
   const onSubmit = (data) => {
     // /post data to the server
@@ -19,6 +20,7 @@ const AddInventoryItem = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+    reset();
   };
   return (
     <Row>
