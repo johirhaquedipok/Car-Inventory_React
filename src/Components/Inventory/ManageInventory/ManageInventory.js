@@ -4,17 +4,20 @@ import { BsFillXCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const ManageInventory = () => {
   const [cars, setCars] = useState([]);
+
+  // remove item from the server
+
   useEffect(() => {
     fetch(`http://localhost:5000/inventories`)
       .then((res) => res.json())
       .then((data) => setCars(data));
   }, []);
+
   const handleRemove = (id) => {
     const sure = window.confirm("Are you sure!");
     if (sure) {
       const oldCar = [...cars];
       const newCar = oldCar.filter((item) => item._id !== id);
-
       setCars(newCar);
     }
   };

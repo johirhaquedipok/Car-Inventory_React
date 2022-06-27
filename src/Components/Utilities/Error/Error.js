@@ -1,7 +1,9 @@
 const Error = ({ error }) => {
   return (
     <div>
-      <p className="text-danger">{error.message}</p>
+      <p className="text-danger">
+        {error.message ? error.message : "Some Error Happened"}
+      </p>
     </div>
   );
 };
