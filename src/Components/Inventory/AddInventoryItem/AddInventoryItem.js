@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
 const AddInventoryItem = () => {
   const [user] = useAuthState(auth);
+  const [newId, setNewId] = useState("");
   const {
     register,
     handleSubmit,
@@ -11,11 +13,13 @@ const AddInventoryItem = () => {
     reset,
   } = useForm();
   // insertedId
-  const userMail = user?.email;
   // add to usersdb
   const addUserToDb = (id) => {
-    const userData = { mail: userMail, productId: [id] };
-    fetch(`http://localhost:5000/userInventory`, {
+    const email = user?.email;
+    const oldnewId = newId;
+    console.log(oldnewId);
+    const userData = { email: email, productId: [id] };
+    fetch(`http://localhost:5000/userInventory?email=${email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -23,13 +27,13 @@ const AddInventoryItem = () => {
       body: JSON.stringify(userData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setNewId(data));
   };
   // on submit data
   const onSubmit = (data) => {
     // /post data to the server
 
-    fetch("http://localhost:5000/inventories", {
+    fetch(`http://localhost:5000/inventories`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,6 +42,7 @@ const AddInventoryItem = () => {
     })
       .then((res) => res.json())
       .then((data) => addUserToDb(data.insertedId));
+
     reset();
   };
   return (
