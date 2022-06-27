@@ -1,11 +1,10 @@
-import { useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../../firebase.init";
 const AddInventoryItem = () => {
   const [user] = useAuthState(auth);
-  const [newId, setNewId] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -14,11 +13,11 @@ const AddInventoryItem = () => {
   } = useForm();
   // insertedId
   // add to usersdb
+
   const addUserToDb = (id) => {
     const email = user?.email;
-    const oldnewId = newId;
-    console.log(oldnewId);
-    const userData = { email: email, productId: [id] };
+
+    const userData = { email: email, productId: id };
     fetch(`http://localhost:5000/userInventory?email=${email}`, {
       method: "PUT",
       headers: {
@@ -27,7 +26,7 @@ const AddInventoryItem = () => {
       body: JSON.stringify(userData),
     })
       .then((res) => res.json())
-      .then((data) => setNewId(data));
+      .then((data) => console.log(data));
   };
   // on submit data
   const onSubmit = (data) => {
