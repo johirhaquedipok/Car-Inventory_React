@@ -16,7 +16,6 @@ const AddInventoryItem = () => {
 
   const addUserToDb = (id) => {
     const email = user?.email;
-
     const userData = { email: email, productId: id };
     fetch(`http://localhost:5000/userInventory?email=${email}`, {
       method: "PUT",
