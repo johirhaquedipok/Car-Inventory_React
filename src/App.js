@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container, ToastContainer } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import LogIn from "./Components/Authorization/Login/LogIn";
 import RequireAuth from "./Components/Authorization/RequireAuth/RequireAuth";
@@ -54,6 +54,7 @@ function App() {
       <Container>
         <Footer />
       </Container>
+      <ToastContainer />
     </>
   );
 }

@@ -35,7 +35,7 @@ We have a sample task for you.
 
 10. If a user is logged in, he/she will see more options like `Manage Items`, `Add Item`, `My items`, `Logout`. Based on your website idea, you can change the name of these menu items.👍
 
-11. On the My Items page, the logged-in user will see only his/her Items. If the user wants, he/she should be able to cancel/delete any item. Ask for a confirmation message before deleting or canceling an item. Using browser confirmation dialog is ok. So, you will be able to delete an item either from the `Manage Inventories` page also, from the `My Items` page.⭕database add baki ache⭕
+11. On the My Items page, the logged-in user will see only his/her Items. If the user wants, he/she should be able to cancel/delete any item. Ask for a confirmation message before deleting or canceling an item. Using browser confirmation dialog is ok. So, you will be able to delete an item either from the `Manage Inventories` page also, from the `My Items` page.👍
 
 12. No Fake data (data must be hosted on the database). Database could be mongodb atlas or any other noSQL database.👍
 13. Add two more routes. one route will be `blogs`. You will need to answer at least three questions on the blog page. This won't be a protected route. We recommend answering all four questions.
@@ -61,8 +61,8 @@ We have a sample task for you.
 7. Clean and organized Code. Organize components and add comments when needed👍
 8. Add a loading spinner on the home page and the login/register page. If data is loading, a spinner will be displayed.👍
 9. use the Environment variable on both the client and server-side. `.env` file hides db user and db password and another server-side secret info. Use .gitignore file on the server-side.👍
-10. Implement the basic version of the `jwt` token for email/password based authentication. Upon login, you will create a jwt token and store it on the client-side, and for the `My Items` page, you will send the token with the call and verify the user. Implementing 401 and 403 is optional. For social login, jwt token implementation is optional.
-11. Create a `stackoverflow` profile and post a question or an answer at the time of submitting your assignment. You will submit the link to the stackoverflow question. If you do not want to add a question, you can add an answer on stackoverflow. If you can't add a stackoverflow question/answer, you can submit a github issue to any library that you are using. Your question or answer has to be a meaningful question or answer.
+10. Implement the basic version of the `jwt` token for email/password based authentication. Upon login, you will create a jwt token and store it on the client-side, and for the `My Items` page, you will send the token with the call and verify the user. Implementing 401 and 403 is optional. For social login, jwt token implementation is optional.👍
+11. Create a `stackoverflow` profile and post a question or an answer at the time of submitting your assignment. You will submit the link to the stackoverflow question. If you do not want to add a question, you can add an answer on stackoverflow. If you can't add a stackoverflow question/answer, you can submit a github issue to any library that you are using. Your question or answer has to be a meaningful question or answer.👍
 
 ### Optional but highly encourage:
 

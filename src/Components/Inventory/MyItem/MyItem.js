@@ -11,17 +11,19 @@ const MyItem = () => {
   const getProducts = useCallback((data) => {
     const mainData = data?.productId;
 
-    fetch(`http://localhost:5000/productids`, {
+    fetch(`http://localhost:5000/productids?email=${email}`, {
       method: "POST",
+
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(mainData),
     })
       .then((res) => res.json())
       .then((newData) => setCars(newData));
   }, []);
-  console.log(cars);
+
   useEffect(() => {
     fetch(`http://localhost:5000/userInventory?email=${email}`)
       .then((res) => res.json())
@@ -48,7 +50,7 @@ const MyItem = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          return;
         });
       // remove from main invetory
 
@@ -64,7 +66,7 @@ const MyItem = () => {
   };
   return (
     <Row>
-      {cars.length !== 0 ? (
+      {cars?.length !== 0 ? (
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -77,7 +79,7 @@ const MyItem = () => {
             </tr>
           </thead>
 
-          {cars.map((car, idx) => (
+          {cars?.map((car, idx) => (
             <tbody key={car._id}>
               <tr>
                 <td>{idx + 1}</td>

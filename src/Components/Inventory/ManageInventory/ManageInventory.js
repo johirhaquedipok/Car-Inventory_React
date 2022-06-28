@@ -39,13 +39,13 @@ const ManageInventory = () => {
           </tr>
         </thead>
         {cars.map((car, idx) => (
-          <tbody key={car._id}>
+          <tbody key={car?._id}>
             <tr>
               <td>{idx + 1}</td>
-              <td>{car.name}</td>
-              <td>{car.price}</td>
-              <td>{car.quantity}</td>
-              <td>{car.supllierName}</td>
+              <td>{car?.name}</td>
+              <td>{car?.price}</td>
+              <td>{car?.quantity}</td>
+              <td>{car?.supllierName}</td>
               <td>
                 <Button
                   variant="danger"

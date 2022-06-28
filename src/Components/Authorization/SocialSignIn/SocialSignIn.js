@@ -14,11 +14,12 @@ const SocialSignIn = () => {
   if (loading) {
     <Loading />;
   }
+  const email = user?.email;
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
     }
-  }, [user, navigate, from]);
+  }, [user, navigate, from, email]);
   let err;
   if (error) {
     err = <Error error={error} />;
