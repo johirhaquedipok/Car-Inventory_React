@@ -37,6 +37,7 @@ function App() {
               </RequireAuth>
             }
           />
+
           <Route
             path="/myitem"
             element={
@@ -45,13 +46,20 @@ function App() {
               </RequireAuth>
             }
           />
-
+          <Route
+            path="/inventory"
+            element={
+              <RequireAuth>
+                <ManageInventory />
+              </RequireAuth>
+            }
+          />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
-      <Container>
+      <Container fluid className="bg-light">
         <Footer />
       </Container>
       <ToastContainer />

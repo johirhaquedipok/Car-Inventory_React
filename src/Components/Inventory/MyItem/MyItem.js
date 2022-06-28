@@ -8,21 +8,24 @@ const MyItem = () => {
   const [cars, setCars] = useState([]);
   const email = user?.email;
   //
-  const getProducts = useCallback((data) => {
-    const mainData = data?.productId;
+  const getProducts = useCallback(
+    (data) => {
+      const mainData = data?.productId;
 
-    fetch(`http://localhost:5000/productids?email=${email}`, {
-      method: "POST",
+      fetch(`http://localhost:5000/productids?email=${email}`, {
+        method: "POST",
 
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify(mainData),
-    })
-      .then((res) => res.json())
-      .then((newData) => setCars(newData));
-  }, []);
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify(mainData),
+      })
+        .then((res) => res.json())
+        .then((newData) => setCars(newData));
+    },
+    [email]
+  );
 
   useEffect(() => {
     fetch(`http://localhost:5000/userInventory?email=${email}`)
