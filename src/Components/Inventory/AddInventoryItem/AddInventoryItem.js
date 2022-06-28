@@ -17,7 +17,7 @@ const AddInventoryItem = () => {
   const addUserToDb = (id) => {
     const email = user?.email;
     const userData = { email: email, productId: id };
-    fetch(`http://localhost:5000/userInventory?email=${email}`, {
+    fetch(`https://carinvento.herokuapp.com/userInventory?email=${email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const AddInventoryItem = () => {
   const onSubmit = (data) => {
     // /post data to the server
 
-    fetch(`http://localhost:5000/inventories`, {
+    fetch(`https://carinvento.herokuapp.com/inventories`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -16,7 +16,7 @@ const SingleInventory = () => {
   }, [id]);
 
   const getNewCar = (id) => {
-    fetch(`http://localhost:5000/inventories/${id}`)
+    fetch(`https://carinvento.herokuapp.com/inventories/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setQuantity(data?.quantity);
@@ -38,7 +38,7 @@ const SingleInventory = () => {
       description,
     };
 
-    fetch(`http://localhost:5000/inventories/${id}`, {
+    fetch(`https://carinvento.herokuapp.com/inventories/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

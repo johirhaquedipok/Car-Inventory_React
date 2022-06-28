@@ -8,7 +8,7 @@ const ManageInventory = () => {
   // remove item from the server
 
   useEffect(() => {
-    fetch(`http://localhost:5000/inventories`)
+    fetch(`https://carinvento.herokuapp.com/inventories`)
       .then((res) => res.json())
       .then((data) => setCars(data));
   }, []);

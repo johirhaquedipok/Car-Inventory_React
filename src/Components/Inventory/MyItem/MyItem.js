@@ -12,7 +12,7 @@ const MyItem = () => {
     (data) => {
       const mainData = data?.productId;
 
-      fetch(`http://localhost:5000/productids?email=${email}`, {
+      fetch(`https://carinvento.herokuapp.com/productids?email=${email}`, {
         method: "POST",
 
         headers: {
@@ -28,7 +28,7 @@ const MyItem = () => {
   );
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userInventory?email=${email}`)
+    fetch(`https://carinvento.herokuapp.com/userInventory?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length === 0) {
@@ -44,7 +44,7 @@ const MyItem = () => {
     if (sure) {
       // remove from database inventory
       const userData = { email: email, productId: id };
-      fetch(`http://localhost:5000/userInventory?email=${email}`, {
+      fetch(`https://carinvento.herokuapp.com/userInventory?email=${email}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const MyItem = () => {
         });
       // remove from main invetory
 
-      fetch(`http://localhost:5000/inventory/${id}`, {
+      fetch(`https://carinvento.herokuapp.com/inventory/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
