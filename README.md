@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Car Invento](https://carinvento.web.app/).
+[Car Invento](https://carinvento.web.app/).
 
 ## important steps to
 
@@ -18,3 +18,17 @@ Car Invento is a warehouse or inventory based site where people can find differe
     -User Can add their personal products detail with the add item form
     -Also user have thier personal page of their added product
     -heroku is used for nodjs server
+
+## packages I used for this project
+
+    * react
+    * react icon
+    * react form
+    * react bootstrap
+    * react router dom
+    * react toastiy
+    * fireabse
+    * react fireabse hooks
+    * NodeJs
+    * express Js
+    * MongoDb
