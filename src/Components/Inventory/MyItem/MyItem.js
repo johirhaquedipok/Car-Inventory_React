@@ -30,10 +30,17 @@ const MyItem = () => {
 
   const handleRemove = (id) => {
     const sure = window.confirm("Are you sure!");
+
     if (sure) {
-      const oldCar = [...cars];
-      const newCar = oldCar.filter((item) => item._id !== id);
-      setCars(newCar);
+      const url = `http://localhost:5000/inventory/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = cars.filter((car) => car._id !== id);
+          setCars(remaining);
+        });
     }
   };
   return (
