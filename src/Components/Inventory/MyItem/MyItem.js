@@ -68,45 +68,57 @@ const MyItem = () => {
     }
   };
   return (
-    <Row>
-      {cars?.length !== 0 ? (
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Car Name</th>
-              <th>Car Price</th>
-              <th>Car Quantity</th>
-              <th>Car Supplier</th>
-              <th>Remove</th>
-            </tr>
-          </thead>
+    <>
+      <div className="text-center my-4">
+        <h4>Manage your persola data</h4>
+        <div className=" d-flex align-items-cetner justify-content-center">
+          <div
+            className="bg-dark mb-3"
+            style={{ height: "5px", width: "80px", borderRadius: "10px" }}
+          ></div>
+        </div>
+      </div>
 
-          {cars?.map((car, idx) => (
-            <tbody key={car._id}>
+      <Row className="bg-light py-3">
+        {cars?.length !== 0 ? (
+          <Table striped bordered hover>
+            <thead>
               <tr>
-                <td>{idx + 1}</td>
-                <td>{car?.name}</td>
-                <td>{car?.price}</td>
-                <td>{car?.quantity}</td>
-                <td>{car?.supllierName}</td>
-                <td>
-                  <Button
-                    variant="danger"
-                    className="d-flex align-items-center justif-content-center"
-                    onClick={() => handleRemove(car?._id)}
-                  >
-                    <BsFillXCircleFill />
-                  </Button>
-                </td>
+                <th>#</th>
+                <th>Car Name</th>
+                <th>Car Price</th>
+                <th>Car Quantity</th>
+                <th>Car Supplier</th>
+                <th>Remove</th>
               </tr>
-            </tbody>
-          ))}
-        </Table>
-      ) : (
-        <div className="align-self-center">You got no data </div>
-      )}
-    </Row>
+            </thead>
+
+            {cars?.map((car, idx) => (
+              <tbody key={car._id}>
+                <tr>
+                  <td>{idx + 1}</td>
+                  <td>{car?.name}</td>
+                  <td>{car?.price}</td>
+                  <td>{car?.quantity}</td>
+                  <td>{car?.supllierName}</td>
+                  <td>
+                    <Button
+                      variant="danger"
+                      className="d-flex align-items-center justif-content-center"
+                      onClick={() => handleRemove(car?._id)}
+                    >
+                      <BsFillXCircleFill />
+                    </Button>
+                  </td>
+                </tr>
+              </tbody>
+            ))}
+          </Table>
+        ) : (
+          <h3 className="align-self-center text-center">You got no data </h3>
+        )}
+      </Row>
+    </>
   );
 };
 
