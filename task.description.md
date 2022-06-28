@@ -17,7 +17,7 @@ We have a sample task for you.
 
 1. Home page will have a header (simple navbar), banner, items (inventory items that you are managing. Maximum 6 items), and footer.👍
 
-2. Add two extra sections on the home page and the four sections mentioned above. Tips: This is the place to shine. Add something different and unique to make your website looks different than others. And Make them relevant to your website. ⭕one home section baki⭕
+2. Add two extra sections on the home page and the four sections mentioned above. Tips: This is the place to shine. Add something different and unique to make your website looks different than others. And Make them relevant to your website. 👍
 
 3. You will have six items in the inventory items section. You can put one or more items in a row based on your design. Each article should have a relevant name👍, image👍, short description, price👍, quantity👍, supplier name👍, and an update button👍 (button could say: update or manage or stock update, etc.).
 
