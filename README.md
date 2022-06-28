@@ -1,6 +1,11 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Car Invento](https://github.com/johirhaquedipok).
+This project was bootstrapped with [Car Invento](https://carinvento.web.app/).
+
+## important steps to
+
+- Sign Up an account and then log in
+- email verification is disables for now
 
 Car Invento is a warehouse or inventory based site where people can find differet kind of cars collection in bulk.
 
@@ -12,3 +17,4 @@ Car Invento is a warehouse or inventory based site where people can find differe
     - And also can remove any item from the tabular list
     -User Can add their personal products detail with the add item form
     -Also user have thier personal page of their added product
+    -heroku is used for nodjs server
