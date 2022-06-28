@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button, Row, Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BsFillXCircleFill } from "react-icons/bs";
@@ -6,29 +6,36 @@ import auth from "../../../firebase.init";
 const MyItem = () => {
   const [user] = useAuthState(auth);
   const [cars, setCars] = useState([]);
-  const array = [];
+  const email = user?.email;
   //
-  const getProducts = (data) => {
+  const getProducts = useCallback((data) => {
     const mainData = data?.productId;
-    for (let item of mainData) {
-      fetch(`http://localhost:5000/inventories/${item}`)
-        .then((res) => res.json())
-        .then((newdata) => array.push(newdata));
-    }
-    console.log([...new Set(array)]);
-  };
+
+    fetch(`http://localhost:5000/productids`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(mainData),
+    })
+      .then((res) => res.json())
+      .then((newData) => setCars(newData));
+  }, []);
 
   useEffect(() => {
-    const email = user?.email;
     fetch(`http://localhost:5000/userInventory?email=${email}`)
       .then((res) => res.json())
       .then((data) => getProducts(data[0]));
-  }, [user.email]);
+  }, [email, getProducts]);
 
   const handleRemove = (id) => {
-    console.log(id);
+    const sure = window.confirm("Are you sure!");
+    if (sure) {
+      const oldCar = [...cars];
+      const newCar = oldCar.filter((item) => item._id !== id);
+      setCars(newCar);
+    }
   };
-  // console.log(array);
   return (
     <Row>
       <Table striped bordered hover>
@@ -43,24 +50,26 @@ const MyItem = () => {
           </tr>
         </thead>
 
-        <tbody key={cars._id}>
-          <tr>
-            <td>{0 + 1}</td>
-            <td>{cars.name}</td>
-            <td>{cars.price}</td>
-            <td>{cars.quantity}</td>
-            <td>{cars.supllierName}</td>
-            <td>
-              <Button
-                variant="danger"
-                className="d-flex align-items-center justif-content-center"
-                onClick={() => handleRemove(cars._id)}
-              >
-                <BsFillXCircleFill />
-              </Button>
-            </td>
-          </tr>
-        </tbody>
+        {cars.map((car, idx) => (
+          <tbody key={car._id}>
+            <tr>
+              <td>{idx + 1}</td>
+              <td>{car?.name}</td>
+              <td>{car?.price}</td>
+              <td>{car?.quantity}</td>
+              <td>{car?.supllierName}</td>
+              <td>
+                <Button
+                  variant="danger"
+                  className="d-flex align-items-center justif-content-center"
+                  onClick={() => handleRemove(car?._id)}
+                >
+                  <BsFillXCircleFill />
+                </Button>
+              </td>
+            </tr>
+          </tbody>
+        ))}
       </Table>
     </Row>
   );
